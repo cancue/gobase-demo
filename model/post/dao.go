@@ -18,9 +18,8 @@ type Post struct {
 }
 
 // Create interacts with database.
-func (post *Post) Create() (postID uuid.UUID, err error) {
-	postID = uuid.NewV4()
-	post.PostID = postID
+func (post *Post) Create() (err error) {
+	post.PostID = uuid.NewV4()
 
 	connection := db.Get()
 

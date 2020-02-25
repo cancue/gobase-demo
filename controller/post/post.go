@@ -43,10 +43,8 @@ func (params *Read) Exec(_ gobase.Context) (result interface{}, err error) {
 }
 
 // For unit tests
-var createPost = func(a *post.Post) (err error) {
-	_, err = a.Create()
-
-	return
+var createPost = func(a *post.Post) error {
+	return a.Create()
 }
 
 var readPost = func(a *post.Post) error {
