@@ -8,6 +8,7 @@ import (
 	"gobase_demo/db"
 )
 
+// Post is a DAO.
 type Post struct {
 	PostID    uuid.UUID `json:"postID" pg:",pk"`
 	Title     string    `json:"title" validate:"required"`
@@ -16,6 +17,7 @@ type Post struct {
 	UpdatedAt time.Time `json:"-"`
 }
 
+// Create interacts with database.
 func (post *Post) Create() (postID uuid.UUID, err error) {
 	postID = uuid.NewV4()
 	post.PostID = postID
@@ -28,12 +30,14 @@ func (post *Post) Create() (postID uuid.UUID, err error) {
 	return
 }
 
+// Read interacts with database.
 func (post *Post) Read() error {
 	connection := db.Get()
 
 	return connection.Select(post)
 }
 
+// Update interacts with database.
 func (post *Post) Update(columns *[]string) (err error) {
 	connection := db.Get()
 
@@ -43,6 +47,7 @@ func (post *Post) Update(columns *[]string) (err error) {
 	return
 }
 
+// Delete interacts with database.
 func (post *Post) Delete() (err error) {
 	connection := db.Get()
 

@@ -1,5 +1,7 @@
 github.com/cancue/gobase v0.1.0 h1:P07VfAIknM/nUCvuaMNP3EQsErr9OObKYD7Q5koic14=
 github.com/cancue/gobase v0.1.0/go.mod h1:6ILSMRw/yYQsBaJEs4J7UXfGbT0BzzaOAfXfEXY6Mdc=
+github.com/cancue/gobase v0.1.1 h1:gbsOClcXTSfLDNLS8zwsIqiJ74X+HBUDk3Pii39/sKQ=
+github.com/cancue/gobase v0.1.1/go.mod h1:6ILSMRw/yYQsBaJEs4J7UXfGbT0BzzaOAfXfEXY6Mdc=
 github.com/codemodus/kace v0.5.1 h1:4OCsBlE2c/rSJo375ggfnucv9eRzge/U5LrrOZd47HA=
 github.com/codemodus/kace v0.5.1/go.mod h1:coddaHoX1ku1YFSe4Ip0mL9kQjJvKkzb9CfIdG1YR04=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

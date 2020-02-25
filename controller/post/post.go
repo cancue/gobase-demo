@@ -7,11 +7,13 @@ import (
 	"gobase_demo/model/post"
 )
 
+// Create is the controller seed.
 type Create struct {
 	Title   string `validate:"required"`
 	Content string `validate:"required"`
 }
 
+// Exec is the controller executor.
 func (params *Create) Exec(_ gobase.Context) (result interface{}, err error) {
 	post := post.Post{
 		Title:   params.Title,
@@ -23,10 +25,12 @@ func (params *Create) Exec(_ gobase.Context) (result interface{}, err error) {
 	return
 }
 
+// Read is the controller seed.
 type Read struct {
 	PostID uuid.UUID `param:"postID" validate:"required"`
 }
 
+// Exec is the controller executor.
 func (params *Read) Exec(_ gobase.Context) (result interface{}, err error) {
 	post := post.Post{
 		PostID: params.PostID,

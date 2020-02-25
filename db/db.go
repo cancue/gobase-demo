@@ -22,6 +22,7 @@ func init() {
 	})
 }
 
+// Get returns go-pg DB which is safe for concurrent use by multiple goroutines and maintains its own connection pool.
 func Get() *pg.DB {
 	return db
 }
