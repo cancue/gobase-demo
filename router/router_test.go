@@ -5,27 +5,27 @@ import (
 	"testing"
 
 	"github.com/cancue/gobase"
+	"github.com/cancue/gobase/router"
 	"github.com/stretchr/testify/assert"
 )
 
 type API struct {
 	Method string
 	Path   string
-	Name   string
 }
 
 type APIs []API
 
 func TestApply(t *testing.T) {
-	server := gobase.NewWithConfig(new(gobase.Config))
 	expect := &APIs{
-		{"POST", "/posts", "github.com/cancue/gobase.Controller.func1"},
-		{"GET", "/posts/:postID", "github.com/cancue/gobase.Controller.func1"},
+		{"POST", "/posts"},
+		{"GET", "/posts/:postID"},
 	}
 
-	Apply(server)
+	gb := gobase.Server{Router: Apply}
+	gb.Set(0, "..")
 
-	data, err := server.Routes()
+	data, err := router.Routes(gb.Echo)
 	assert.Nil(t, err, "gobase.Controllers error")
 
 	result := new(APIs)

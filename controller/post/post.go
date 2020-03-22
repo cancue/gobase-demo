@@ -1,7 +1,7 @@
 package post
 
 import (
-	"github.com/cancue/gobase"
+	"github.com/cancue/gobase/router"
 	uuid "github.com/satori/go.uuid"
 
 	"gobase_demo/model/post"
@@ -14,13 +14,14 @@ type Create struct {
 }
 
 // Exec is the controller executor.
-func (params *Create) Exec(_ gobase.Context) (result interface{}, err error) {
+func (params *Create) Exec(_ router.Context) (result interface{}, err error) {
 	post := post.Post{
 		Title:   params.Title,
 		Content: params.Content,
 	}
 
 	err = createPost(&post)
+	result = post
 
 	return
 }
@@ -31,7 +32,7 @@ type Read struct {
 }
 
 // Exec is the controller executor.
-func (params *Read) Exec(_ gobase.Context) (result interface{}, err error) {
+func (params *Read) Exec(_ router.Context) (result interface{}, err error) {
 	post := post.Post{
 		PostID: params.PostID,
 	}

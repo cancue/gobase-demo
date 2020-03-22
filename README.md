@@ -25,8 +25,8 @@ $ docker run --name "dev-pg" -d -p "5432:5432" -v "$DOCKER_PGDATA:/var/lib/postg
 ```bash
 $ docker exec -it dev-pg bash
 root# psql --username=postgres
-postgres=# create user local_example_user with password 'local_example_pw';
-postgres=# create database local_example owner local_example_user;
+postgres=# create user local_demo_user with password 'local_demo_pw';
+postgres=# create database local_demo owner local_demo_user;
 postgres=# \q
 root# exit
 ```

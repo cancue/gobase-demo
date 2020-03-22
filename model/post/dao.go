@@ -3,9 +3,8 @@ package post
 import (
 	"time"
 
+	"github.com/cancue/gobase/db/pg"
 	uuid "github.com/satori/go.uuid"
-
-	"gobase_demo/db"
 )
 
 // Post is a DAO.
@@ -21,7 +20,7 @@ type Post struct {
 func (post *Post) Create() (err error) {
 	post.PostID = uuid.NewV4()
 
-	connection := db.Get()
+	connection := pg.Get()
 
 	_, err = connection.
 		Model(post).Returning("*").Insert()
@@ -31,14 +30,14 @@ func (post *Post) Create() (err error) {
 
 // Read interacts with database.
 func (post *Post) Read() error {
-	connection := db.Get()
+	connection := pg.Get()
 
 	return connection.Select(post)
 }
 
 // Update interacts with database.
 func (post *Post) Update(columns *[]string) (err error) {
-	connection := db.Get()
+	connection := pg.Get()
 
 	_, err = connection.
 		Model(post).Column(*columns...).WherePK().Update()
@@ -48,7 +47,7 @@ func (post *Post) Update(columns *[]string) (err error) {
 
 // Delete interacts with database.
 func (post *Post) Delete() (err error) {
-	connection := db.Get()
+	connection := pg.Get()
 
 	_, err = connection.
 		Model(post).WherePK().Delete()
