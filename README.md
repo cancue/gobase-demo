@@ -45,8 +45,8 @@ $ STAGE={stage} && go run app.go
 
 ### New Table
 ```bash
-$ vi db/migrate/migrations/{migration}.(sql|go) # based on [goose](https://github.com/pressly/goose)
-$ go run db/migrate.go up
+$ vi db/migrations/{migration}.(sql|go) # based on [goose](https://github.com/pressly/goose)
+$ go run db/goose.go up
 $ vi model/{package}/dao.go
 ```
 
@@ -54,6 +54,7 @@ $ vi model/{package}/dao.go
 ```bash
 $ vi controller/{package}/{package}.go
 $ vi router/router.go
+$ vi router/router_test.go
 ```
 
 ## 2. Test
