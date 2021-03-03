@@ -1,11 +1,8 @@
 module gobase_demo
 
-go 1.13
+go 1.16
 
 require (
-	github.com/cancue/gobase v0.2.1
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
-	github.com/labstack/echo/v4 v4.1.15
-	github.com/satori/go.uuid v1.2.0
-	github.com/stretchr/testify v1.4.0
+	github.com/cancue/gobase v0.2.4-0.20210303061441-d151c3570628
+	github.com/gofiber/fiber/v2 v2.5.0
 )

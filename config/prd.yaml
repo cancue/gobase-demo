@@ -1,0 +1,27 @@
+name: gobase-demo
+server:
+  domain: localhost
+  port: 8080
+  timeout:
+    read: 60
+    write: 60
+  allow-origins:
+  - http://localhost:3000
+db:
+  driver: postgres
+  connection:
+    database: gobase_demo
+    host: postgres
+    port: 5432
+    user: gobase_demo
+    password: ${GOBASE_POSTGRES_PASSWORD}
+jwt:
+  secret: ${GOBASE_JWT_SECRET}
+internal-inbound:
+  token: ${GOBASE_INTERNAL_APP_API_TOKEN}
+slack:
+  hook-url: https://hooks.slack.com/services/${SLACK_API_TOKEN}
+  accepted-level: warn
+  channel: '#logger'
+  icon: ':ghost:'
+  username: 'logger'

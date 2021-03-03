@@ -1,0 +1,11 @@
+### status
+GET http://localhost:3000/status
+
+### string
+GET http://localhost:3000/string
+
+### json
+GET http://localhost:3000/json
+
+### 404
+GET http://localhost:3000/foobar

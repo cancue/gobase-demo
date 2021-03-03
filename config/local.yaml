@@ -1,16 +1,6 @@
 name: gobase-demo
 server:
-  port: 65533
-  timeout:
-    read: 60
-    write: 60
-allow-origins:
-- http://localhost
-db:
-  driver: postgres
-  connection:
-    database: local_demo
-    host: 127.0.0.1
-    port: 5432
-    user: local_demo_user
-    password: local_demo_pw
+  domain: localhost
+  port: 3000
+  allow-origins:
+  - http://localhost:3000
