@@ -24,7 +24,7 @@ $ STAGE={stage} && go run app.go
 
 ┌── config
 ├── domain
-│   └── entity
+│   ├── entity
 │   │   └── account
 │   └── usecase
 │       └── account
@@ -32,11 +32,11 @@ $ STAGE={stage} && go run app.go
 │           ├── dto.go
 │           └── gateway.go
 ├── interface
-│   └── controller
+│   ├── controller
 │   │   └── account
 │   └── router
 └── repository
-    └── account
+    ├── account
     └── db
         ├── orm
         │   └── account
