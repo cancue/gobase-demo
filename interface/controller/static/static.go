@@ -17,11 +17,14 @@ func String(ctx *fiber.Ctx) (err error) {
 }
 
 // JSON .
-type JSON struct{}
+type JSON struct {
+	Name string `json:"name" validate:"min=6,max=64,required"`
+}
 
+// Exec .
 func (req *JSON) Exec(ctx *fiber.Ctx) (result interface{}, err error) {
 	result = map[string]string{
-		"message": "Hello, World 👋!",
+		"message": "Hello, " + req.Name + "!",
 	}
 	return
 }

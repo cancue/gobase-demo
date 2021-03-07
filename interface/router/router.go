@@ -1,9 +1,10 @@
 package router
 
 import (
+	"gobase_demo/interface/controller/static"
+
 	"github.com/cancue/gobase/controller"
 	"github.com/gofiber/fiber/v2"
-	"gobase_demo/interface/controller/static"
 )
 
 // Router links path to controllers before the server is started.

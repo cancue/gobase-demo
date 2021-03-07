@@ -4,8 +4,21 @@ GET http://localhost:3000/status
 ### string
 GET http://localhost:3000/string
 
-### json
+### json 200
 GET http://localhost:3000/json
+content-type: application/json
+
+{
+    "name": "stranger"
+}
+
+### json 400 (invalid name field)
+GET http://localhost:3000/json
+content-type: application/json
+
+{
+    "name": "short"
+}
 
 ### 404
 GET http://localhost:3000/foobar
